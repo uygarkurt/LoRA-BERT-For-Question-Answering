@@ -3,8 +3,10 @@ from torch import optim, nn
 from torch.utils.data import DataLoader, random_split
 import transformers
 from transformers import BertTokenizerFast, BertForQuestionAnswering
+from peft import LoraModel, LoraConfig, get_peft_model
 from sklearn.metrics import f1_score
 from tqdm import tqdm
+import timeit
 
 from squad_dataset import SquadDataset
 
@@ -17,10 +19,28 @@ if __name__ == "__main__":
     EPOCHS = 3
     DATA_PATH = "/content/drive/MyDrive/uygar/bert-qa/data/SQuAD.json"
     MODEL_PATH = "bert-base-uncased"
-    MODEL_SAVE_PATH = f"/content/drive/MyDrive/uygar/bert-qa/models/{MODEL_PATH}-lr{LEARNING_RATE}-epochs{EPOCHS}-batchsize{BATCH_SIZE}/"
+    MODEL_SAVE_PATH = f"/content/drive/MyDrive/uygar/bert-qa/models/{MODEL_PATH}-lr{LEARNING_RATE}-epochs{EPOCHS}-batchsize{BATCH_SIZE}-LORA-retrain/"
+    LORA = False
 
     tokenizer = BertTokenizerFast.from_pretrained(MODEL_PATH)
     model = BertForQuestionAnswering.from_pretrained(MODEL_PATH).to(device)
+
+    if LORA:
+        config = LoraConfig(
+            task_type = "QUESTION_ANS",
+            inference_mode = False,
+            r = 16,
+            lora_alpha = 32,
+            lora_dropout = 0.05,
+            fan_in_fan_out = False,
+            bias = "none",
+        )
+
+        print("# Trainable Parameters Before LoRA")
+        print(model.num_parameters())
+        model = get_peft_model(model, config)
+        print("# Trainable Parameters After LoRA") 
+        model.print_trainable_parameters()
     
     dataset = SquadDataset(DATA_PATH, tokenizer)
 
@@ -39,6 +59,7 @@ if __name__ == "__main__":
 
     optimizer = optim.AdamW(model.parameters(), lr=LEARNING_RATE)
 
+    start = timeit.default_timer() 
     for epoch in tqdm(range(EPOCHS)):
         model.train()
         train_running_loss = 0
@@ -74,6 +95,8 @@ if __name__ == "__main__":
         print(f"Train Loss EPOCH {epoch+1}: {train_loss:.4f}")
         print(f"Valid Loss EPOCH {epoch+1}: {val_loss:.4f}")
         print("-"*30)
+    stop = timeit.default_timer()
+    print(f"Training Time: {stop-start:.2f}s")
 
     model.save_pretrained(MODEL_SAVE_PATH)
     tokenizer.save_pretrained(MODEL_SAVE_PATH)
