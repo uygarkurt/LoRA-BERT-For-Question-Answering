@@ -34,6 +34,7 @@ Project structured as follows:
 In order to enable the LoRA support you have to set the `LORA` variable in the `main.py` file to `True`. That's it! I used [DEFT](https://huggingface.co/docs/peft/index) to leverage LoRA into the code.
 
 ### LoRA BERT vs Non-LoRA BERT
+Comparion of LoRA BERT and Non-LoRA BERT by loss values given below.
 
 | # Epoch | Loss Type  | LoRA BERT | Non-LoRA BERT |
 |---------|------------|-----------|---------------|
@@ -44,8 +45,14 @@ In order to enable the LoRA support you have to set the `LORA` variable in the `
 | EPOCH 3 | Train Loss | 1.9270    | 0.4640        |
 |         | Val Loss   | 1.5660    | 1.2105        |
 
-### Pre-Trained Model
-You can download a sample pre-trained model from [here](https://drive.google.com/file/d/1aIcI_9RRWVUJHts5ZgsKDuH4HjVFe467/view?usp=sharing). Put the model into the `models/` directory. Note that this sample model was trained on 20000 samples of the whole dataset.
+Comparion of LoRA BERT and Non-LoRA BERT by training time and GPU utility given below.
+| Metrics       | LoRA BERT       | Non-LoRA BERT   |
+|---------------|-----------------|-----------------|
+| GPU Utility   | 10.4GB          | 12.9GB          |
+| Training Time | 3763.52 Seconds | 4597.28 Seconds |
+
+### Pre-Trained Models
+You can download sample pre-trained models for [LoRA BERT](https://drive.google.com/file/d/1JfUJnAIupcaEv6PKzVOoB0Lsk1wv_q1Y/view?usp=sharing) and [Non-LoRA BERT](https://drive.google.com/file/d/1aIcI_9RRWVUJHts5ZgsKDuH4HjVFe467/view?usp=sharing). Put the models into the `models/` directory where `inference.py` natively points to. Note that these sample models were trained on 20000 samples of the whole dataset.
 
 ### Inference
 `inference.py` file provides easy pipeline to use. Change the `context` and `question` variables based on your need. Change the `model` and `tokenizer` arguments inside the pipeline to point to your trained model.
