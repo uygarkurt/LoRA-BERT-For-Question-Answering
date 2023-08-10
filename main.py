@@ -3,7 +3,7 @@ from torch import optim, nn
 from torch.utils.data import DataLoader, random_split
 import transformers
 from transformers import BertTokenizerFast, BertForQuestionAnswering
-from peft import LoraModel, LoraConfig, get_peft_model
+from peft import LoraConfig, get_peft_model
 from sklearn.metrics import f1_score
 from tqdm import tqdm
 import timeit
