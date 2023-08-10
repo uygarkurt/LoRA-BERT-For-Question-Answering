@@ -20,7 +20,7 @@ if __name__ == "__main__":
     DATA_PATH = "/content/drive/MyDrive/uygar/bert-qa/data/SQuAD.json"
     MODEL_PATH = "bert-base-uncased"
     MODEL_SAVE_PATH = f"/content/drive/MyDrive/uygar/bert-qa/models/{MODEL_PATH}-lr{LEARNING_RATE}-epochs{EPOCHS}-batchsize{BATCH_SIZE}-LORA-retrain/"
-    LORA = False
+    LORA = True
 
     tokenizer = BertTokenizerFast.from_pretrained(MODEL_PATH)
     model = BertForQuestionAnswering.from_pretrained(MODEL_PATH).to(device)
