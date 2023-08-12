@@ -6,7 +6,7 @@ This repository contains an easy-to-use and understand code to fine-tune BERT fo
 
 Above example demonstrates a sample context, question and answer. 
 
-### YouTube Tutorial
+### YouTube Tutorials
 This repository also contains a corresponding YouTube tutorials. 
 
 To implement the main Q&A code check this video: **Fine-Tune BERT For Question-Answering(Q&A) - PyTorch & HuggingFace**
