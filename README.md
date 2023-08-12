@@ -50,12 +50,13 @@ Comparion of LoRA BERT and Non-LoRA BERT by loss values given below.
 |         | Val Loss   | 1.5660    | 1.2105        |
 
 Comparion of LoRA BERT and Non-LoRA BERT by training time and GPU utility given below.
-| Metrics           | LoRA BERT       | Non-LoRA BERT   |
-|-------------------|-----------------|-----------------|
-| GPU Utility       | 10.4GB          | 12.9GB          |
-| Training Time     | 3763.52 Seconds | 4597.28 Seconds |
-| File Size         | 2.4MB           | 385MB           |
-| Inference Latency | 0.14 Seconds    | 0.14 Seconds    |
+| Metrics              | LoRA BERT       | Non-LoRA BERT   |
+|----------------------|-----------------|-----------------|
+| GPU Utility          | 10.4GB          | 12.9GB          |
+| Training Time        | 3763.52 Seconds | 4597.28 Seconds |
+| File Size            | 2.4MB           | 385MB           |
+| Inference Latency    | 0.14 Seconds    | 0.14 Seconds    |
+| Trainable Parameters | 108893186       | 592900          |
 
 ### Pre-Trained Models
 You can download sample pre-trained models for [LoRA BERT](https://drive.google.com/file/d/1JfUJnAIupcaEv6PKzVOoB0Lsk1wv_q1Y/view?usp=sharing) and [Non-LoRA BERT](https://drive.google.com/file/d/1aIcI_9RRWVUJHts5ZgsKDuH4HjVFe467/view?usp=sharing). Put the models into the `models/` directory where `inference.py` natively points to. Note that these sample models were trained on 20000 samples of the whole dataset.
