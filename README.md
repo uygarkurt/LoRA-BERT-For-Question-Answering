@@ -7,9 +7,13 @@ This repository contains an easy-to-use and understand code to fine-tune BERT fo
 Above example demonstrates a sample context, question and answer. 
 
 ### YouTube Tutorial
-This repository also contains a corresponding YouTube tutorial with the title **Fine-Tune BERT For Question-Answering(Q&A) - PyTorch & HuggingFace**
+This repository also contains a corresponding YouTube tutorials. 
 
+To implement the main Q&A code check this video: **Fine-Tune BERT For Question-Answering(Q&A) - PyTorch & HuggingFace**
 [![Thumbnail](./assets/youtube-thumbnail.png)](https://www.youtube.com/watch?v=PikqVppe408&t=9s)
+
+To learn more about LoRA, see how it's implemented in this repository and view the experiments check this video: **LoRA BERT vs Non-LoRA BERT: Comparison and Implementation**
+[![Thumbnail](./assets/lora-thumbnail.png)](https://www.youtube.com/watch?v=gHsm1F2muiM&t=8s)
 
 ### Project Structure
 Project structured as follows:
