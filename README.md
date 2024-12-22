@@ -1,4 +1,30 @@
-## Fine-Tune BERT For Question Answering
+# Fine-Tune BERT For Question Answering
+
+<div align="center">
+    <a href="">
+        <img alt="open-source-image"
+        src="https://img.shields.io/badge/Open%20Source%20❤%EF%B8%8F-%2325A162.svg?style=flat"
+        style="height: 30px"/>
+    </a>
+    <a href="https://youtu.be/gHsm1F2muiM">
+        <img alt="youtube-tutorial"
+        src="https://img.shields.io/badge/YouTube Tutorial-%23FF0000.svg?logo=youtube&logoColor=white&style=flat"
+        style="height: 30px"/>
+    </a>
+</div>
+<div align="center">
+    <a href="https://www.buymeacoffee.com/uygarkurt" target="_blank">
+        <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" 
+        style="height: 45px"/>
+    </a>
+</div>
+<br/>
+<div align="center">
+    <p>Liked our work? give us a ⭐!</p>
+</div>
+<p align="center">
+  <img src="./assets/U.png" height="70%%" width="70%%"/>
+</p>
 
 ![Sample Result](./assets/qa-sample.png)
 
