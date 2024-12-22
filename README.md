@@ -23,10 +23,8 @@
     <p>Liked our work? give us a ⭐!</p>
 </div>
 <p align="center">
-  <img src="./assets/U.png" height="70%%" width="70%%"/>
+  <img src="./assets/qa-sample.png" height="70%%" width="70%%"/>
 </p>
-
-![Sample Result](./assets/qa-sample.png)
 
 This repository contains an easy-to-use and understand code to fine-tune BERT for Question-Answering(Q&A) with option to use [LoRA](https://github.com/microsoft/LoRA). Sample training was made by using [SQuAD Dataset](https://rajpurkar.github.io/SQuAD-explorer/). Dataset preparation part was inspired from [HuggingFace Tutorial](https://huggingface.co/transformers/v3.2.0/custom_datasets.html#question-answering-with-squad-2-0).
 
